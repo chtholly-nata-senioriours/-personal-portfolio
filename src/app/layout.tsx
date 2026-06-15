@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
@@ -32,10 +31,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors">
-        <ThemeProvider>
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <div className="bg-blob-1" />
+        <div className="bg-blob-2" />
+        <div className="relative z-10">
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
