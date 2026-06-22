@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FiCalendar, FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { blogPosts } from "@/data/blog";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata = {
   title: "博客 | 赵鑫",
@@ -8,10 +8,11 @@ export const metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <main className="min-h-screen pt-24 pb-24 px-6 bg-white dark:bg-zinc-950">
       <div className="max-w-3xl mx-auto">
-        {/* Header */}
         <div className="mb-16">
           <Link
             href="/#blog"
@@ -32,14 +33,13 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Blog list */}
-        {blogPosts.length === 0 ? (
+        {posts.length === 0 ? (
           <p className="text-center text-zinc-400 dark:text-zinc-500 py-20">
             暂无文章，敬请期待
           </p>
         ) : (
           <div className="space-y-6">
-            {blogPosts.map((post) => (
+            {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}

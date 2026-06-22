@@ -7,8 +7,10 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
+import { getAllPosts } from "@/lib/blog";
 
 export default function Home() {
+  const posts = getAllPosts();
   return (
     <div className="min-h-screen lg:pl-[220px]">
       <Sidebar />
@@ -32,7 +34,7 @@ export default function Home() {
 
         {/* 04 博客 */}
         <Section id="blog" num="04" title="博客" subtitle="Blog">
-          <Blog />
+          <Blog posts={posts} />
         </Section>
 
         {/* 05 个人经历 + 06 联系方式 (7:3) */}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowRight, FiCalendar } from "react-icons/fi";
-import { blogPosts } from "@/data/blog";
+import type { BlogPost } from "@/lib/blog";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -14,8 +14,8 @@ const cardVariants = {
   }),
 };
 
-export default function Blog() {
-  const recentPosts = blogPosts.slice(0, 3);
+export default function Blog({ posts }: { posts: BlogPost[] }) {
+  const recentPosts = posts.slice(0, 3);
 
   return (
     <div>
@@ -50,7 +50,7 @@ export default function Blog() {
           </motion.div>
         ))}
       </div>
-      {blogPosts.length > 3 && (
+      {posts.length > 3 && (
         <div className="text-center mt-6">
           <Link
             href="/blog"

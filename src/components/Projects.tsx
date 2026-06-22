@@ -7,6 +7,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
+  image: string;
   demoUrl?: string;
   sourceUrl?: string;
 }
@@ -16,8 +17,17 @@ const projects: Project[] = [
     title: "路人女主？别开玩笑啦！",
     description:
       "参与 TapTap 聚光灯 GameJam 的作品，项目代号 Chtholly。一款创意玩法原型，使用 Unity + C# 开发。游戏累计获得百余人次的有效体验与广泛关注，在比赛中脱颖而出。作为团队程序设计，负责整体架构设计与核心玩法实现。",
+    image: "/projects/chtholly.jpg",
     tags: ["Unity", "C#", "TapTap", "GameJam"],
     demoUrl: "https://www.taptap.cn/app/779228",
+  },
+  {
+    title: "小小桌宠 Demo",
+    description:
+      "基于 Python + PySide6 (Qt6) 构建的桌面宠物应用。半透明悬浮窗口，智能感知键盘/鼠标/窗口活动，状态机驱动精灵图动画，集成番茄钟、便签、快捷启动等插件系统。",
+    image: "/projects/pet-demo.png",
+    tags: ["Python", "PySide6", "Qt6", "桌面宠物"],
+    sourceUrl: "https://github.com/chtholly-nata-senioriours/little-table-pet",
   },
 ];
 
@@ -44,7 +54,7 @@ export default function Projects() {
           className="group bg-white dark:bg-zinc-800/50 rounded-2xl border border-zinc-200/60 dark:border-zinc-700/40 overflow-hidden hover:shadow-lg hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300 hover:-translate-y-1 flex flex-col"
         >
           <img
-            src="/projects/chtholly.jpg"
+            src={project.image}
             alt={project.title}
             className="h-44 w-full object-cover"
           />

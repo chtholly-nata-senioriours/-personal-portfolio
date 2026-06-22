@@ -11,11 +11,10 @@ const slides = [
     desc: "TapTap 聚光灯 GameJam 参赛作品，项目代号 Chtholly。48 小时内完成的创意玩法原型。",
   },
   {
-    img: "",
-    title: "蓝桥杯 · 省二等奖",
-    tags: ["算法", "C++"],
-    desc: "首次参加算法类比赛，获省级二等奖。",
-    gradient: "from-rose-400 to-pink-500",
+    img: "/projects/pet-demo.png",
+    title: "小小桌宠 Demo",
+    tags: ["Python", "PySide6", "Qt6"],
+    desc: "基于 Python + PySide6 (Qt6) 构建的桌面宠物，半透明悬浮窗口，智能感知工作状态，状态机驱动动画。",
   },
   {
     img: "",
@@ -47,10 +46,10 @@ export default function HeroBanner() {
       const keywords: Record<string, string[]> = {
         about: ["赵鑫", "学校", "数据科学", "cobo", "腾讯", "光子"],
         skills: ["react", "vue", "c#", "c++", "java", "unity", "git"],
-        projects: ["taptap", "gamejam", "chtholly", "游戏", "路人女主"],
-        experience: ["cobo", "腾讯", "光子", "蓝桥", "码蹄", "实习", "算法"],
+        projects: ["taptap", "gamejam", "chtholly", "游戏", "路人女主", "桌宠", "python"],
+        experience: ["cobo", "腾讯", "光子", "蓝桥", "码蹄", "实习", "算法", "桌宠"],
         blog: ["博客", "文章", "日志", "开发"],
-        ["experience-contact"]: ["cobo", "腾讯", "光子", "蓝桥", "码蹄", "实习"],
+        ["experience-contact"]: ["cobo", "腾讯", "光子", "蓝桥", "码蹄", "实习", "桌宠"],
       };
       const matchKeywords = (keywords[id] || []).some((k) => k.includes(q) || q.includes(k));
       const matchText = text.includes(q);
